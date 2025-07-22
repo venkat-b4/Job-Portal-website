@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f2f2f2;
+        }
+        header {
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: blue;
+    animation: normal 2s ease-in;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 12px;
+    display: block;
+}
+.link:hover, .active{
+    border-bottom: 2px solid #0543ed;
+}
+
+.nav-links li a:hover {
+    color: #007bff;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.auth-buttons a {
+    display: inline-block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.login {
+    background-color: #fff;
+    border: 1px solid #007bff;
+    color: #007bff;
+    border-radius: 15px;
+}
+
+.login:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.register {
+    background-color: #ff6c4b;
+    color: #fff;
+    border-radius: 15px;
+}
+
+.register:hover {
+    background-color: #fa3808;
+}
+        .services-container {
+            margin-top: 50px;
+        }
+        .service-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .service-card .card-body {
+            padding: 30px;
+        }
+        .service-card h4 {
+            color: #0056b3;
+            margin-bottom: 15px;
+        }
+        .service-card p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .service-card img {
+            max-width: 100%;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .service-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">JobPortal</div>
+            <ul class="nav-links">
+                <li><a href="home.html" class="link">Home</a></li>
+                <li><a href="index.html" class="link">Jobs</a></li>
+                <li><a href="company.html" class="link">Companies</a></li>
+                <li><a href="ser.html" class="link active">Services</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <button class="login"><a href="log.html">Login</a></button>
+                <button class="register"><a href="reg.html">Register</a></button>
+            </div>
+        </nav>
+    </header>
+    <div class="container services-container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card service-card">
+                    <div class="card-body">
+                        <i class="fas fa-file-alt service-icon"></i>
+                        <h4 class="card-title">Resume Writing</h4>
+                        <p class="card-text">Let our experts craft your perfect resume to land your dream job.</p>
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card service-card">
+                    <div class="card-body">
+                        <i class="fas fa-user-tie service-icon"></i>
+                        <h4 class="card-title">Interview Coaching</h4>
+                        <p class="card-text">Prepare for interviews with confidence through personalized coaching sessions.</p>
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card service-card">
+                    <div class="card-body">
+                        <i class="fas fa-comments service-icon"></i>
+                        <h4 class="card-title">Career Counseling</h4>
+                        <p class="card-text">Get expert advice on choosing the right career path for your aspirations.</p>
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card service-card">
+                    <div class="card-body">
+                        <i class="fas fa-chart-line service-icon"></i>
+                        <h4 class="card-title">Career Assessment</h4>
+                        <p class="card-text">Discover your strengths and interests through our comprehensive career assessment.</p>
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card service-card">
+                    <div class="card-body">
+                        <i class="fas fa-graduation-cap service-icon"></i>
+                        <h4 class="card-title">Education Consultation</h4>
+                        <p class="card-text">Get guidance on selecting the right educational programs and institutions.</p>
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card service-card">
+                    <div class="card-body">
+                        <i class="fas fa-user-graduate service-icon"></i>
+                        <h4 class="card-title">Skill Development</h4>
+                        <p class="card-text">Enhance your skills and stay competitive in your field with our training programs.</p>
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

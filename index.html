@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <header>
+        <nav class="navbar">
+            <div class="logo">JobPortal</div>
+            <ul class="nav-links">
+                <li><a href="home.html" class="link">Home</a></li>
+                <li><a href="index.html" class="link active">Jobs</a></li>
+                <li><a href="company.html" class="link">Companies</a></li>
+                <li><a href="ser.html" class="link">Services</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <button class="login"><a href="log.html">Login</a></button>
+                <button class="register"><a href="reg.html">Register</a></button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="search-section">
+            <h1>Find your dream job now</h1>
+            <p>5 lakh+ jobs for you to explore</p>
+            <div class="search-bar">
+                <input type="text" placeholder="Enter skills / designations / companies" aria-label="Job Search">
+                <select aria-label="Experience">
+                    <option>Select Experience</option>
+                    <option>1 Year</option>
+                    <option>2 Year</option>
+                    <option>3 Year</option>
+                    <option>4 Year</option>
+                    <option>5+ Year</option>
+                </select>
+                <input type="text" placeholder="Enter location" aria-label="Location">
+                <button class="search">Search</button>
+            </div>
+        </section>
+        
+        <section class="categories-section">
+            <div class="category">
+                <i class="fas fa-laptop-house"></i>
+                <span><a href="https://www.naukri.com/remote-jobs?src=discovery_trendingWdgt_homepage_srch">Remote</a></span>
+            </div>
+            <div class="category">
+                <i class="fas fa-code"></i>
+                <span><a href="https://www.naukri.com/it-jobs?src=discovery_trendingWdgt_homepage_srch">Software & IT</a></span>
+            </div>
+            <div class="category">
+                <i class="fas fa-building"></i>
+                <span><a href="https://www.naukri.com/mnc-jobs?src=discovery_trendingWdgt_homepage_srch">MNC</a></span>
+            </div>
+            <div class="category">
+                <i class="fas fa-bullhorn"></i>
+                <span><a href="https://www.naukri.com/marketing-jobs?src=discovery_trendingWdgt_homepage_srch">Marketing</a></span>
+            </div>
+            <div class="category">
+                <i class="fas fa-chart-line"></i>
+                <span><a href="https://www.naukri.com/analytics-jobs?src=discovery_trendingWdgt_homepage_srch">Analytics</a></span>
+            </div>
+            <div class="category">
+                <i class="fas fa-briefcase"></i>
+                <span><a href="https://www.naukri.com/sales-jobs?src=discovery_trendingWdgt_homepage_srch">Sales</a></span>
+            </div>
+            <div class="category">
+                <i class="fas fa-university"></i>
+                <span><a href="https://www.naukri.com/bfsi-jobs?src=discovery_trendingWdgt_homepage_srch">Banking & Finance</a></span>
+            </div>
+            <div class="category">
+                <i class="fas fa-industry"></i>
+                <span><a href="https://www.naukri.com/supply-chain-jobs?src=discovery_trendingWdgt_homepage_srch">Manufacturing</a></span>
+            </div>
+            <div class="category">
+                <i class="fas fa-lightbulb"></i>
+                <span><a href="https://www.naukri.com/startup-jobs?src=discovery_trendingWdgt_homepage_srch">Start Ups</a></span>
+            </div>
+            <div class="category">
+                <i class="fas fa-user-graduate"></i>
+                <span><a href="https://www.naukri.com/fresher-jobs?src=discovery_trendingWdgt_homepage_srch">Fresher</a></span>
+            </div>
+        </section>
+        <section class="top-companies">
+            <h2>Top companies hiring now</h2>
+            <div class="companies-list">
+                <div class="company">
+                    <h3>MNCs</h3>
+                    <p>590 are actively hiring</p>
+                    <div class="company-logos">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/29798.gif" alt="Accenture Logo">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/763714.gif" alt="BrainStation Logo">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/27742.gif" alt="AC Logo">
+                        <div class="view">
+                            <button><a href="https://www.naukri.com/mnc-companies-in-india-cat101?title=MNCs+actively+hiring&src=discovery_orgExploreCompanies_homepage_srch">View More</a></button>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="company">
+                    <h3>Internet</h3>
+                    <p>191 are actively hiring</p>
+                    <div class="company-logos">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/481822.gif" alt="Internet Company Logo 5">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/533532.gif" alt="Internet Company Logo 6">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/2016162.gif" alt="Internet Company Logo 7">
+                        <div class="view">
+                            <button><a href="https://www.naukri.com/internet-companies-in-india-cat105?title=Internet+companies+actively+hiring&src=discovery_orgExploreCompanies_homepage_srch">View More</a></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="company">
+                    <h3>Manufacturing</h3>
+                    <p>802 are actively hiring</p>
+                    <div class="company-logos">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/4635205.gif" alt="Internet Company Logo 5">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/570250.gif" alt="Internet Company Logo 6">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/898544.gif" alt="Internet Company Logo 7">
+                        <div class="view">
+                            <button><a href="https://www.naukri.com/manufacturing-companies-in-india-cat112?title=Manufacturing%20companies%20actively%20hiring&src=discovery_orgExploreCompanies_homepage_srch&categoryId=112">View More</a></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="company">
+                    <h3>Fortune 500</h3>
+                    <p>107 are actively hiring</p>
+                    <div class="company-logos">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/4585477.gif" alt="Internet Company Logo 5">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/4036.gif" alt="Internet Company Logo 6">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/1320206.gif" alt="Internet Company Logo 7">
+                        <div class="view">
+                            <button><a href="https://www.naukri.com/fortune-500-companies-in-india-cat115?title=Fortune+500+actively+hiring&src=discovery_orgExploreCompanies_homepage_srch">View More</a></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="company">
+                    <h3>Product</h3>
+                    <p>950 are actively hiring</p>
+                    <div class="company-logos">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/4581509.gif" alt="Internet Company Logo 5">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/3654392.gif" alt="Internet Company Logo 6">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/5211308.gif" alt="Internet Company Logo 7">
+                        <div class="view">
+                            <button><a href="https://www.naukri.com/product-companies-in-india-cat106?title=Product+companies+actively+hiring&src=discovery_orgExploreCompanies_homepage_srch">View More</a></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="company">
+                    <h3>Banking & Finance</h3>
+                    <p>348 are actively hiring</p>
+                    <div class="company-logos">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/4606091.gif" alt="Internet Company Logo 5">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/4582149.gif" alt="Internet Company Logo 6">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/4598407.gif" alt="Internet Company Logo 7">
+                        <div class="view">
+                        <button><a href="https://www.naukri.com/banking-and-finance-companies-in-india-cat110?title=Banking+%26+Financial+services+companies+actively+hiring&src=discovery_orgExploreCompanies_homepage_srch">View More</a></button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <main>
+            <section class="discover-jobs">
+                <div class="container">
+                    <div class="description">
+                        <img src="https://static.naukimg.com/s/0/0/i/role-collection-ot.png" alt="Discover Jobs Image">
+                        <h2>Discover jobs across popular roles</h2>
+                        <p>Select a role and we’ll show you relevant jobs for it!</p>
+                    </div>
+                    <div class="roles">
+                        <ul>
+                            <li>Full Stack Developer <span>15.4K+ Jobs</span></li>
+                            <li>Mobile / App Developer <span>2.1K+ Jobs</span></li>
+                            <li>Front End Developer <span>3.1K+ Jobs</span></li>
+                            <li>DevOps Engineer <span>2K+ Jobs</span></li>
+                            <li>Engineering Manager <span>1.1K+ Jobs</span></li>
+                            <li>Technical Lead <span>9.8K+ Jobs</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        
+            <section class="prepare-interview">
+                <div class="container">
+                    <div class="description">
+                        <img src="https://static.naukimg.com/s/0/0/i/ab-interview-ot.png" alt="Prepare Interview Image">
+                        <h2>Prepare for your next interview</h2>
+                    </div>
+                    <div class="questions">
+                        <h3>Interview questions by company</h3>
+                        <ul>
+                            <li>Accenture <span>2K+ Interviews</span></li>
+                            <li>Byjus <span>816 Interviews</span></li>
+                            <li>Amazon <span>1.7K+ Interviews</span></li>
+                            <li>Flipkart <span>488 Interviews</span></li>
+                            <li>Cognizant <span>1.6K+ Interviews</span></li>
+                            <li>TCS <span>2.5K+ Interviews</span></li>
+                        </ul>
+                        <h3>Interview questions by role</h3>
+                        <ul>
+                            <li>Software Engineer <span>7.2K+ questions</span></li>
+                            <li>Business Analyst <span>2.8K+ questions</span></li>
+                            <li>Consultant <span>2.4K+ questions</span></li>
+                            <li>Financial Analyst <span>894 questions</span></li>
+                            <li>Sales & Marketing <span>991 questions</span></li>
+                            <li>Quality Engineer <span>1.3K+ questions</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="container1">
+                <div class="powered">
+                    <h1>Powered By</h1>
+                </div>
+                <div class="naukri">
+                    <img src="https://static.naukimg.com/s/0/0/i/naukri-identity/naukriLogo.svg" alt="Navkri.com">
+                </div>
+            </section>
+        </main>
+
+    
+    <footer>
+        <div class="footercontent">
+            <div class="socialIcons">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <div class="footernav">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="https://www.hindustantimes.com/education/employment-news">News</a></li>
+                </ul>
+            </div>
+        </div>
+        <p>&copy; 2024 All Rigths are reserved, you agree to our <a href="#">Privacy Policy & Cookie Policy</a>.</p>
+    </footer>
+</body>
+</html>

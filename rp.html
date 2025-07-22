@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+         body {
+            background-color: #f8f9fa;
+            background-image: url('rp.jpg');
+            align-content:flex-end ;
+            background-size: cover;
+        }
+        .reset-password-container {
+            margin-top: 100px;
+        }
+        .reset-password-form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(0, 0, 0, 0.5)
+        }
+        .reset-password-form h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #fff;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .input-field{
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    height: 50px;
+    width: 100%;
+    padding: 0 10px 0 45px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    transition: .2s ease;
+}
+.input-box i{
+    position: relative;
+    top: -35px;
+    left: 17px;
+    color: #fff;
+}
+.input-field:hover, .input-field:focus{
+    background: rgba(255, 255, 255, 0.25);
+}
+::-webkit-input-placeholder{
+    color: #fff;
+}
+        .btn-reset {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-reset:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container reset-password-container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card reset-password-form">
+                    <div class="card-body">
+                        <h3>Reset Password</h3>
+                        <form id="reset-password-form">
+                            <div class="input-box">
+                                <input type="text" class="input-field" id="new-password" placeholder="New Password">
+                                <i class="bx bx-lock-alt"></i>
+                            </div>
+                            <div class="input-box">
+                                <input type="password" class="input-field" id="confirm-password" placeholder="Confirm Password">
+                                <i class="bx bx-lock-alt"></i>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block btn-reset">Reset Password</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#reset-password-form').submit(function(e){
+                e.preventDefault();
+                var newPassword = $('#new-password').val();
+                var confirmPassword = $('#confirm-password').val();
+                if(newPassword === confirmPassword) {
+                    // Passwords match, show success alert
+                    showAlert('success', 'Password successfully changed.');
+                    // Clear input fields
+                    $('#new-password').val('');
+                    $('#confirm-password').val('');
+                } else {
+                    // Passwords don't match, show error alert
+                    showAlert('danger', 'Passwords do not match.');
+                }
+            });
+
+            function showAlert(type, message) {
+                // Create the alert element
+                var alertElement = $('<div class="alert alert-' + type + ' alert-dismissible fade show" role="alert">' +
+                                        message +
+                                        '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+                                            '<span aria-hidden="true">&times;</span>' +
+                                        '</button>' +
+                                    '</div>');
+                // Append the alert to the body
+                $('body').append(alertElement);
+                // Automatically close the alert after 5 seconds
+                setTimeout(function(){
+                    alertElement.alert('close');
+                }, 5000);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+       body {
+            background-color: #f8f9fa;
+            background-image: url('com.jpg');
+            align-content:flex-end ;
+            background-size: cover;
+        }
+        .contact-us-container {
+            margin-top: 100px;
+        }
+        .contact-us-form {
+            background-color:rgba(255, 255, 255, 0.5);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact-us-form h3 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .btn-submit {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-submit:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+    </style>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert("Your message has been received.");
+        }
+    </script>
+</head>
+<body>
+    <div class="container contact-us-container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card contact-us-form">
+                    <div class="card-body">
+                        <h3>Contact Us</h3>
+                        <form id="contact-us-form" onsubmit="handleSubmit(event)">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter your Full Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea class="form-control" id="message" rows="4" placeholder="Enter your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block btn-submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

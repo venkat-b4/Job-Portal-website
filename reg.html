@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Job Portal Registration</title>
+<style>
+  :root {
+    --blue-light: #4a90e2;
+    --blue-dark: #003d99;
+    --blue-gradient: linear-gradient(135deg, #4a90e2, #003d99);
+    --input-bg: #f0f7ffcc; /* slightly transparent */
+    --input-border: #a8c6ff;
+    --error-color: #e24a4a;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+    background-size: cover;
+  }
+
+  .container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    max-width: 400px;
+    width: 90%;
+    padding: 2.5rem 2rem 3.5rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 12px 40px rgb(0 0 0 / 0.25);
+    color: var(--blue-dark);
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  label {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    display: inline-block;
+    color: #fff;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"] {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 2px solid var(--input-border);
+    background-color: var(--input-bg);
+    color: var(--blue-dark);
+    transition: border-color 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="tel"]:focus,
+  input[type="password"]:focus {
+    border-color: var(--blue-light);
+    outline: none;
+    box-shadow: 0 0 8px var(--blue-light);
+  }
+
+  .error-message {
+    font-size: 0.875rem;
+    color: var(--error-color);
+    margin-top: -0.75rem;
+  }
+
+  button {
+    margin-top: 1.5rem;
+    background: var(--blue-gradient);
+    color: #fff;
+    border: none;
+    padding: 0.9rem 0;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  button:hover {
+    background: var(--blue-dark);
+  }
+
+  .signin-link {
+    text-align: center;
+    margin-top: 1rem;
+    color: #fff;
+  }
+
+  .signin-link a {
+    color: var(--blue-light);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .signin-link a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      padding: 2rem 1rem 3rem 1rem;
+      max-width: 100%;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="container" role="main" aria-labelledby="form-title">
+    <h2 id="form-title">Job Portal Registration</h2>
+    <form id="registrationForm" novalidate>
+      <div>
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" name="fullName" autocomplete="name" placeholder="John Doe" required />
+        <div class="error-message" id="fullNameError"></div>
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" autocomplete="email" placeholder="john@example.com" required />
+        <div class="error-message" id="emailError"></div>
+      </div>
+      <div>
+        <label for="mobile">Mobile Number</label>
+        <input type="tel" id="mobile" name="mobile" pattern="^\+?\d{7,15}$" autocomplete="tel" placeholder="+91 1234567890" value="+91" required />
+        <div class="error-message" id="mobileError"></div>
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" autocomplete="new-password" minlength="6" placeholder="At least 6 characters" required />
+        <div class="error-message" id="passwordError"></div>
+      </div>
+      <div>
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" autocomplete="new-password" minlength="6" placeholder="Re-enter password" required />
+        <div class="error-message" id="confirmPasswordError"></div>
+      </div>
+      <button type="submit" aria-label="Register account">Register</button>
+      <div class="signin-link">
+        Already have an account? <a href="log.html" id="signInLink">Sign In</a>
+      </div>
+    </form>
+  </div>
+
+<script>
+  const form = document.getElementById('registrationForm');
+  const mobileInput = document.getElementById('mobile');
+  const signInLink = document.getElementById('signInLink');
+
+  function clearErrors() {
+    ['fullNameError', 'emailError', 'mobileError', 'passwordError', 'confirmPasswordError'].forEach(id => {
+      document.getElementById(id).textContent = '';
+    });
+  }
+
+  function validateEmail(email) {
+    // Simple email pattern
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  function validateMobile(mobile) {
+    // Accepts digits with optional leading +
+    return /^\+?\d{7,15}$/.test(mobile);
+  }
+
+  // Prevent deleting prefix +91 accidentally
+  mobileInput.addEventListener('keydown', (e) => {
+    const cursorPos = mobileInput.selectionStart;
+    if ((cursorPos <= 3 && (e.key === 'Backspace' || e.key === 'Delete')) ) {
+      e.preventDefault();
+    }
+  });
+
+  mobileInput.addEventListener('click', () => {
+    if (mobileInput.selectionStart < 3) {
+      mobileInput.setSelectionRange(3, 3);
+    }
+  });
+
+  mobileInput.addEventListener('focus', () => {
+    if (!mobileInput.value.startsWith('+91')) {
+      mobileInput.value = '+91';
+    }
+    setTimeout(() => {
+      if (mobileInput.selectionStart < 3) {
+        mobileInput.setSelectionRange(3, 3);
+      }
+    }, 0);
+  });
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    clearErrors();
+
+    let hasError = false;
+
+    const fullName = form.fullName.value.trim();
+    const email = form.email.value.trim();
+    const mobile = form.mobile.value.trim();
+    const password = form.password.value;
+    const confirmPassword = form.confirmPassword.value;
+
+    if (fullName.length < 3) {
+      document.getElementById('fullNameError').textContent = 'Please enter your full name (min 3 characters).';
+      hasError = true;
+    }
+
+    if (!validateEmail(email)) {
+      document.getElementById('emailError').textContent = 'Please enter a valid email address.';
+      hasError = true;
+    }
+
+    if (!validateMobile(mobile)) {
+      document.getElementById('mobileError').textContent = 'Please enter a valid mobile number with 7 to 15 digits.';
+      hasError = true;
+    }
+
+    if (password.length < 6) {
+      document.getElementById('passwordError').textContent = 'Password must be at least 6 characters.';
+      hasError = true;
+    }
+
+    if (password !== confirmPassword) {
+      document.getElementById('confirmPasswordError').textContent = 'Passwords do not match.';
+      hasError = true;
+    }
+
+    if (!hasError) {
+      alert('Registration successful! (This is a placeholder action.)');
+      form.reset();
+      mobileInput.value = '+91';
+    }
+  });
+
+ /*signInLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    alert('log.html'); // Replace with actual sign in page navigation
+  });*/
+</script>
+</body>
+</html>
